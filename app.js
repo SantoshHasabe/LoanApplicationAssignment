@@ -33,7 +33,7 @@ function isFormValid(){
 }
 function validateForm(){
     //userName
-    const letters = /^[A-Za-z-' ']+$/;
+    const letters = /^[A-Za-z' ']+$/;
     if(userName.value.trim() == ''){
         setError(userName, 'Name can not be empty');
     }else if(!userName.value.match(letters)){
@@ -53,10 +53,13 @@ function validateForm(){
     }
 
     // Pan
+    const numbers = /^[A-Za-z0-9]+$/;
     if(pan.value.trim() == ''){
         setError(pan, 'Pan can not be empty');
     }else if(pan.value.trim().length != 10 ){
         setError(pan, 'Pan is not valid.Must be 10 Digit')
+    }else if(!pan.value.match(numbers)){
+        setError(pan, 'Pan is not must be letter and numbers only')
     }else{
         setSucess(pan);
     }
