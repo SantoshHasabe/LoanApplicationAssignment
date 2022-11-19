@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">>
+    <title>Loan Application</title>
+</head>
+<body>
+    <form id="form" action="confirm.html" method="GET">
+        <!-- Title -->
+    <div class="title">Loan Application</div>    
+        <!-- Name -->
+    <div class="input-group" >   
+    <label for="name" >Full Name:</label>
+    <input type="text" name="name" id="name" placeholder="Enter You Full Name" min="9" >
+    <i class="fa-solid fa-circle-check"></i>
+    <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+    <p>Error message</p>
+    </div> 
+        <!-- Email -->
+    <div class="input-group" >  
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" placeholder="Enter email">
+    <i class="fa-solid fa-circle-check"></i>
+    <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+    <p>Error Message</p>
+    </div>
+       <!-- Pan -->
+    <div class="input-group" >    
+    <label for="pan" >Enter PAN:</label>
+    <input type="text" id="pan" name="pan" placeholder="Enter PAN" style="text-transform:uppercase">
+    <i class="fa-solid fa-circle-check"></i>
+    <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+    <p>Error Message</p>
+    </div>
+       <!-- Loan Amount -->
+    <div class="input-group" >    
+    <label for="loan" >Loan Amount:</label>
+    <input type="number" id="loan" name="loanAmount" placeholder="Enter Loan Amount"  >
+    <i class="fa-solid fa-circle-check"></i>
+    <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+    <p>Error Message</p>
+    <div class="emicheck">Click here to check EMI 
+    <button type="button" onclick="EstimatedEmi()">Esitimated EMI:
+        <span id="EstimatedEmi"></span>
+    </ type="button">
+   </div>
+    
+    </div>
+      <!-- Submit -->
+    <button type="submit" class="btn" value="submit">Submit</button>
+    </form> 
+
+    <script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,79 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color:aquamarine;
+}
+
+#form{
+    width: 500px;
+    padding: 20px;
+    text-transform: uppercase;
+    background-color: #fff;
+
+}
+.title{
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+.sucess input{
+    border:3px solid green;
+}
+.error input{
+    border:3px solid red;
+}
+.sucess i.fa-circle-check{
+    visibility: visible;
+    color: green;
+}
+.error i.fa-circle-exclamation{
+    visibility: visible;
+    color: red;
+}
+.input-group{
+    position: relative;
+}
+.input-group p{
+    font-size: 14px;
+    color: red;
+    margin-bottom: 20px;
+    visibility: hidden;
+}
+.error p{
+    font-size: 12px;
+    visibility: visible;
+}
+.input-group label{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.input-group input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
+.input-group i{
+ position: absolute;
+ right: 10px;
+ top:35px;
+ visibility: hidden;
+}
+.btn{
+    width: 100px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: chocolate;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+}
+.emicheck{
+    margin-bottom: 10px;
+}
