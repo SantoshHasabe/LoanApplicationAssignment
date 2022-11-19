@@ -7,13 +7,16 @@ const EstEmi=document.querySelector('#EstimatedEmi');
 
 form.addEventListener('submit', (event)=>{
     validateForm();
+    // generate random otp 
  if(isFormValid()== true){
     const otp=Math.floor((Math.random()*10000)+1)
     console.log(otp);
+     // to store data of form for use in next page
     const name =userName.value;
     const emailId=email.value;
     localStorage.setItem('myobj', JSON.stringify({fn:name, em:emailId}));
     window.location.href="confirm.html";
+     
     form.submit();
  }else{
     event.preventDefault();
@@ -45,7 +48,7 @@ function validateForm(){
     }
     //email
     if(email.value.trim()==''){
-        setError(email, 'Email can not be empty');
+        setError(email, 'Email can not be empty');   
     }else if(isEmailValid(email.value)){
         setSucess(email);
     }else{
@@ -53,7 +56,7 @@ function validateForm(){
     }
 
     // Pan
-    const numbers = /^[A-Za-z0-9]+$/;
+    const numbers = /^[A-Za-z0-9]+$/; // creating regx for containing only letter and numbers
     if(pan.value.trim() == ''){
         setError(pan, 'Pan can not be empty');
     }else if(pan.value.trim().length != 10 ){
@@ -77,6 +80,7 @@ function validateForm(){
 
     
 }
+// function for error message if not validate
 function setError(element, errorMessage){
     const parent = element.parentElement;
     if(parent.classList.contains('sucess')){
@@ -87,6 +91,7 @@ function setError(element, errorMessage){
     para.textContent = errorMessage;
 } 
 
+// function for mark input data is valid
 function setSucess(element){
     const parent = element.parentElement;
     if(parent.classList.contains('error')){
@@ -95,20 +100,21 @@ function setSucess(element){
     parent.classList.add('sucess');
      
 }
-
+  //check for email validation
 function isEmailValid(email){
     const regx=/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     return regx.test(email);
 }
 
+// function for calculation of estimated EMI
 function EstimatedEmi(){
-    let P = loanAmount.value;
-    let R = 8.5/1200;
-    let T=15*12;
+    let P = loanAmount.value; //loan amount
+    let R = 8.5/1200;   //interst rate per month
+    let T=15*12; //total number of installments
     r1=(1+R)
     let S= Math.pow(r1, T);
     let U= Math.pow(r1,T)-1;
-    let emi =  (P*R*S)/U;
+    let emi =  (P*R*S)/U;  // final formulla for EMI
     EstEmi.textContent = emi;   
 }
 
